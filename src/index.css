@@ -9,6 +9,9 @@
 
   /* Accent (sage) */
   --accent: 16 185 129;     /* emerald-500 */
+  
+  /* ...your existing vars... */
+  --topo-color: 16 185 129; /* default: same as accent */
 }
 
 @tailwind base;

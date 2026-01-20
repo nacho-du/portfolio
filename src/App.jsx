@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import ScrollToHash from "./components/ScrollToHash";
 import Hero from "./components/Hero";
 import TechStack from "./components/TechStack";
 import Experience from "./components/Experience";
@@ -10,32 +9,41 @@ import Footer from "./components/Footer";
 import FloatingContact from "./components/FloatingContact";
 import ProjectDetail from "./pages/ProjectDetail";
 
+import TopoBackground from "./components/TopoBackground";
+import TopoColorSync from "./components/TopoColorSync";
+
 export default function App() {
   return (
     <>
-      {/* Handles /#experience, /#projects, etc */}
-      <ScrollToHash />
+      {/* Fixed topo background (behind everything) */}
+      <TopoBackground />
 
-      <Navbar />
+      {/* Sync topo color with visible section */}
+      <TopoColorSync />
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <TechStack />
-              <Experience />
-              <Projects />
-            </>
-          }
-        />
+      {/* App content */}
+      <div className="relative z-10">
+        <Navbar />
 
-        <Route path="/projects/:slug" element={<ProjectDetail />} />
-      </Routes>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <TechStack />
+                <Experience />
+                <Projects />
+              </>
+            }
+          />
 
-      <Footer />
-      <FloatingContact />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
+        </Routes>
+
+        <Footer />
+        <FloatingContact />
+      </div>
     </>
   );
 }

@@ -3,7 +3,7 @@ export const PROJECTS = [
     slug: "filament-recycler",
     title: "Filament Recycler",
     org: "UTEP Greenfund",
-    heroImage: "/projects/filament-recycler.JPEG",
+    heroImage: "projects/filament-recycler.JPEG",
     timeframe: "2025",
     role: "Design + troubleshooting",
     tools: ["Fusion 360", "3D Printing", "PID Control", "Prototyping"],
@@ -15,7 +15,7 @@ export const PROJECTS = [
         body: "Create a reliable process to recycle used PLA into usable filament by building a repeatable processing workflow.",
       },
       {
-        title: "What I built",
+        title: "What We built",
         body: "A processing line concept plus iterative improvements to support continuous melting and stable operation.",
       },
       {

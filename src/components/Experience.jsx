@@ -95,14 +95,19 @@ function ExperienceItem({ item }) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20">
+    <section
+      id="experience"
+      data-topo="16 185 129"   // emerald (matches your accent)
+      className="py-20 scroll-mt-24"
+    >
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-2xl">
           <h3 className="text-3xl font-bold tracking-tight flex items-center gap-3">
             <span className="h-6 w-1 rounded-full bg-[rgb(var(--accent))]" />
             Experience
-            </h3>
+          </h3>
         </div>
+
 
         <div className="mt-12 space-y-16">
           {experience.map((item) => (

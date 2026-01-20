@@ -129,7 +129,11 @@ function ProjectCard({ p }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20">
+    <section
+      id="projects"
+      data-topo="168 85 247"
+      className="py-20 scroll-mt-24"
+    >
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-2xl">
           <h3 className="text-3xl font-bold tracking-tight flex items-center gap-3">
@@ -147,3 +151,4 @@ export default function Projects() {
     </section>
   );
 }
+

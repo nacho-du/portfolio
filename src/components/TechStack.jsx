@@ -55,7 +55,11 @@ function Card({ title, icon, items }) {
 
 export default function TechStack() {
   return (
-    <section id="tech" className="py-20">
+    <section
+      id="tech"
+      data-topo="56 189 248"
+      className="py-20 scroll-mt-24"
+    >
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-2xl mb-6">
           <h3 className="text-3xl font-bold tracking-tight flex items-center gap-3">
