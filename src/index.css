@@ -1,0 +1,24 @@
+:root {
+  /* Backgrounds */
+  --bg-main: 9 9 11;        /* zinc-950 */
+  --bg-card: 24 24 27;      /* zinc-900 */
+
+  /* Text */
+  --text-main: 244 244 245; /* zinc-100 */
+  --text-muted: 161 161 170;/* zinc-400 */
+
+  /* Accent (sage) */
+  --accent: 16 185 129;     /* emerald-500 */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global defaults */
+html,
+body {
+  background-color: rgb(var(--bg-main));
+  color: rgb(var(--text-main));
+  scroll-behavior: smooth;
+}
