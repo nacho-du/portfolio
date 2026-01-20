@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="flex justify-center lg:justify-end">
           <div className="w-64 md:w-80 aspect-[3/4] rounded-2xl overflow-hidden border border-zinc-800">
             <img
-              src="/profile.jpg"
+              src="profile.jpg"
               alt="Ignacio Duarte"
               className="w-full h-full object-cover"
             />

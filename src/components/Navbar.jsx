@@ -22,24 +22,26 @@ export default function Navbar() {
             <FiHome size={18} />
           </Link>
 
-          <a
-            href="#tech"
+          <Link
+            to="/#tech"
             className="hover:text-[rgb(var(--text-main))] transition"
           >
             Tech
-          </a>
-          <a
-            href="#experience"
+          </Link>
+
+          <Link
+            to="/#experience"
             className="hover:text-[rgb(var(--text-main))] transition"
           >
             Experience
-          </a>
-          <a
-            href="#projects"
+          </Link>
+
+          <Link
+            to="/#projects"
             className="hover:text-[rgb(var(--text-main))] transition"
           >
             Projects
-          </a>
+          </Link>
         </div>
 
         <a

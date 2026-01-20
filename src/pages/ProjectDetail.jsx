@@ -165,13 +165,9 @@ export default function ProjectDetail() {
           )}
 
           {/* Back */}
-          <a
-            href="#projects"
-            className="text-sm text-[rgb(var(--text-muted))] hover:text-[rgb(var(--text-main))] transition"
-          >
-            Back to Projects
-          </a>
-
+          <Link to="/#projects" className="text-sm text-zinc-400 hover:text-white">
+             Back to Projects
+          </Link>
           {/* Next */}
           {next ? (
             <Link

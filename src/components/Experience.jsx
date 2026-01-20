@@ -28,7 +28,7 @@ const experience = [
     role: "President",
     org: "Environmental Stewardship Initiative",
     date: "2020 — 2022",
-    image: "/experience/sesi.JPEG",
+    image: "experience/sesi.JPEG",
     bullets: [
       "Led a team of 60+ students focused on environmental restoration initiatives.",
       "Authored and submitted an EPA-approved project proposal securing $10,000 in funding.",
@@ -40,7 +40,14 @@ const experience = [
 
 function Tag({ children }) {
   return (
-    <span className="text-xs rounded-full border border-zinc-800 px-2 py-1 text-zinc-300">
+    <span
+      className="
+        text-xs rounded-full px-2 py-1
+        border border-[rgba(var(--accent),0.45)]
+        bg-[rgba(var(--accent),0.12)]
+        text-[rgb(var(--accent))]
+      "
+    >
       {children}
     </span>
   );
@@ -91,7 +98,10 @@ export default function Experience() {
     <section id="experience" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-2xl">
-          <h3 className="text-3xl font-bold tracking-tight">Experience</h3>
+          <h3 className="text-3xl font-bold tracking-tight flex items-center gap-3">
+            <span className="h-6 w-1 rounded-full bg-[rgb(var(--accent))]" />
+            Experience
+            </h3>
         </div>
 
         <div className="mt-12 space-y-16">

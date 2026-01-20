@@ -5,7 +5,7 @@ const projects = [
     title: "Filament Recycler",
     slug: "filament-recycler",
     org: "UTEP Greenfund",
-    image: "/projects/filament-recycler.JPEG",
+    image: "projects/filament-recycler.JPEG",
     description:
       "Designed a processing line to recycle 25+ kg of used PLA and troubleshot a PID heating system to enable continuous melting.",
     tags: ["Additive Manufacturing", "PID Control", "Design"],
