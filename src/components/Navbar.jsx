@@ -1,26 +1,33 @@
 import { FiHome } from "react-icons/fi";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
   const goToSection = (id) => {
-    const scroll = () => {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
-
-    // If we're already on home, just scroll
+    // If already on home, scroll directly
     if (location.pathname === "/") {
-      scroll();
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
       return;
     }
 
-    // Otherwise go home first, then scroll
+    // From any other route, go home WITH a hash
+    navigate(`/#${id}`);
+  };
+
+  const goHome = () => {
+    // If already home, scroll to top
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    // From other routes, go home (top)
     navigate("/");
-    // wait a tick for home to render
-    setTimeout(scroll, 0);
   };
 
   return (
@@ -36,22 +43,13 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6 text-sm text-[rgb(var(--text-muted))]">
           {/* Home icon */}
           <button
-  type="button"
-  onClick={() => {
-    // If already on home, scroll to top
-    if (location.pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      // Otherwise navigate home
-      navigate("/");
-    }
-  }}
-  className="text-[rgb(var(--accent))] hover:text-[rgba(var(--accent),0.85)] transition"
-  aria-label="Home"
->
-  <FiHome size={18} />
-</button>
-
+            type="button"
+            onClick={goHome}
+            className="text-[rgb(var(--accent))] hover:text-[rgba(var(--accent),0.85)] transition"
+            aria-label="Home"
+          >
+            <FiHome size={18} />
+          </button>
 
           <button
             type="button"

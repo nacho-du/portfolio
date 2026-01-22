@@ -2,20 +2,31 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function ScrollToHash() {
-  const { hash, pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    // If we're on home and there's no hash, optionally scroll to top
-    if (pathname === "/" && !hash) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    // Hash navigation (e.g. "/#projects")
+    if (hash) {
+      // Wait one frame to ensure DOM is painted
+      requestAnimationFrame(() => {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
       return;
     }
 
-    if (!hash) return;
-
-    const el = document.querySelector(hash);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [hash, pathname]);
+    // Normal route navigation (e.g. "/projects/:slug")
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant", // change to "smooth" if you prefer
+    });
+  }, [pathname, hash]);
 
   return null;
 }

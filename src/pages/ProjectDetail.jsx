@@ -59,6 +59,30 @@ export default function ProjectDetail() {
             <p className="mt-6 text-[rgb(var(--text-muted))] leading-relaxed">
               {project.overview}
             </p>
+            {project.reportUrl ? (
+  <a
+    href={project.reportUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      inline-flex items-center gap-2
+      mt-6
+      text-sm px-4 py-2 rounded-md
+      border border-[rgba(var(--accent),0.45)]
+      text-[rgb(var(--accent))]
+      bg-[rgba(var(--accent),0.10)]
+      transition
+      hover:bg-[rgba(var(--accent),0.16)]
+      hover:border-[rgba(var(--accent),0.65)]
+    "
+  >
+    View Report
+    <span className="opacity-80">↗</span>
+  </a>
+) : null}
+
+
+
 
             <div className="mt-6 flex flex-wrap gap-2">
               <Chip>{project.timeframe}</Chip>

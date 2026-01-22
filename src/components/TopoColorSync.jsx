@@ -1,7 +1,13 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function TopoColorSync() {
+  const { pathname } = useLocation();
+
   useEffect(() => {
+    // ❌ Do nothing on project detail pages
+    if (pathname.startsWith("/projects/")) return;
+
     const sections = Array.from(
       document.querySelectorAll("section[data-topo]")
     );
@@ -34,7 +40,7 @@ export default function TopoColorSync() {
     sections.forEach((s) => observer.observe(s));
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }
