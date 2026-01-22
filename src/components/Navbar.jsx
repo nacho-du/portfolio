@@ -34,8 +34,7 @@ export default function Navbar() {
     <header
       className="
         sticky top-0 z-50
-        bg-[rgba(var(--bg-main),0.80)]
-        backdrop-blur
+        bg-[rgb(var(--bg-main))]
         border-b border-[rgba(var(--text-muted),0.25)]
       "
     >

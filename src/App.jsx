@@ -36,8 +36,9 @@ export default function App() {
               <>
                 <Hero />
                 <TechStack />
-                <Experience />
                 <Projects />
+                <Experience />
+                
               </>
             }
           />
