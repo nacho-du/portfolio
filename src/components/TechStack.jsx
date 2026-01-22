@@ -1,13 +1,13 @@
-import { FaPython, FaGitAlt } from "react-icons/fa";
-import { SiArduino } from "react-icons/si";
+import { FaPython, FaGitAlt, FaRobot } from "react-icons/fa";
+import { SiArduino, SiAutodesk } from "react-icons/si";
 import { MdPrecisionManufacturing, MdDesignServices } from "react-icons/md";
-
+import { LuNotebookPen, LuGlobe } from "react-icons/lu";
 
 const groups = [
   {
     title: "Programming",
     icon: <FaPython size={18} />,
-    items: ["Python", "MATLAB"],
+    items: ["Python", "MATLAB (Robotics System Toolbox)"],
   },
   {
     title: "CAD & Design",
@@ -15,19 +15,38 @@ const groups = [
     items: ["SolidWorks", "Fusion 360"],
   },
   {
+    title: "Robotics",
+    icon: <FaRobot size={18} />,
+    items: ["Inverse Kinematics", "Forward Kinematics", "Trajectory Planning", "PID Control", "Null-Space Control (Redundancy Resolution)"
+    ],
+
+  },
+
+  {
     title: "Manufacturing",
     icon: <MdPrecisionManufacturing size={18} />,
     items: ["CNC Machining", "FDM / SLA 3D Printing"],
   },
+  {
+    title: "Analysis & Simulation",
+    icon: <LuNotebookPen size={18} />,
+    items: ["Finite Element Analysis (FEA)", "Stress Analysis", "CFD"],
+  },
+
   {
     title: "Embedded Systems",
     icon: <SiArduino size={18} />,
     items: ["Arduino", "Sensors", "Motor Drivers"],
   },
   {
+    title: "Web Development",
+    icon: <LuGlobe size={18} />,
+    items: ["React", "Vite", "Tailwind CSS", "GitHub Pages"],
+  },
+  {
     title: "Tools",
     icon: <FaGitAlt size={18} />,
-    items: ["Git / GitHub", "Technical Documentation"],
+    items: ["LaTeX", "Git / GitHub", "Technical Documentation"],
   },
 ];
 
@@ -64,7 +83,7 @@ export default function TechStack() {
         <div className="max-w-2xl mb-6">
           <h3 className="text-3xl font-bold tracking-tight flex items-center gap-3">
   <span className="h-6 w-1 rounded-full bg-[rgb(var(--accent))]" />
-  Experience
+  Technologies
 </h3>
         
         </div>
