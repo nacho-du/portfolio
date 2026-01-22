@@ -55,43 +55,57 @@ function Tag({ children }) {
 
 function ExperienceItem({ item }) {
   return (
-    <div className="flex flex-col lg:flex-row gap-8">
-      {/* Image */}
-      <div className="lg:w-1/3">
-        <div className="aspect-video rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900">
-          <img
-            src={item.image}
-            alt={item.role}
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
+    <div
+      className="
+        rounded-3xl
+        border border-[rgba(var(--text-muted),0.25)]
+        bg-[rgba(var(--bg-card),0.75)]
+        backdrop-blur-sm
+        supports-[backdrop-filter]:bg-[rgba(var(--bg-card),0.65)]
+        p-6 sm:p-8
+      "
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        {/* Image */}
+        <div className="lg:col-span-1">
+          <div className="h-full rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900">
+
+
+            <img
+              src={item.image}
+              alt={item.role}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Content */}
-      <div className="lg:w-2/3">
-        <h4 className="text-xl font-semibold tracking-tight">{item.role}</h4>
-        <p className="text-sm text-zinc-400 mt-1">{item.org}</p>
-        <p className="text-sm text-zinc-500 mt-1">{item.date}</p>
+        {/* Content */}
+        <div className="lg:col-span-2 flex flex-col">
+          <h4 className="text-xl font-semibold tracking-tight">{item.role}</h4>
+          <p className="text-sm text-zinc-400 mt-1">{item.org}</p>
+          <p className="text-sm text-zinc-500 mt-1">{item.date}</p>
 
-        <ul className="mt-4 space-y-2 text-sm text-zinc-300">
-          {item.bullets.map((b) => (
-            <li key={b} className="flex gap-3">
-              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-zinc-500 shrink-0" />
-              <span className="leading-relaxed">{b}</span>
-            </li>
-          ))}
-        </ul>
+          <ul className="mt-4 space-y-2 text-sm text-zinc-300">
+            {item.bullets.map((b) => (
+              <li key={b} className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-zinc-500 shrink-0" />
+                <span className="leading-relaxed">{b}</span>
+              </li>
+            ))}
+          </ul>
 
-        <div className="mt-4 flex flex-wrap gap-2">
-          {item.tags.map((t) => (
-            <Tag key={t}>{t}</Tag>
-          ))}
+          <div className="mt-4 flex flex-wrap gap-2">
+            {item.tags.map((t) => (
+              <Tag key={t}>{t}</Tag>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
 
 export default function Experience() {
   return (

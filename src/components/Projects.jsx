@@ -48,7 +48,9 @@ function ProjectCard({ p }) {
       className={`
         group block rounded-2xl
         border border-[rgba(var(--text-muted),0.25)]
-        bg-[rgba(var(--bg-card),0.65)]
+        bg-[rgba(var(--bg-card),0.75)]
+        backdrop-blur-sm
+        supports-[backdrop-filter]:bg-[rgba(var(--bg-card),0.65)]
         overflow-hidden
         transition duration-200
         ${isWip ? "opacity-[0.92] cursor-not-allowed" : ""}
@@ -153,7 +155,9 @@ function QuickProject({ p }) {
       className="
         block rounded-xl
         border border-[rgba(var(--text-muted),0.25)]
-        bg-[rgba(var(--bg-card),0.55)]
+        bg-[rgba(var(--bg-card),0.7)]
+        backdrop-blur-sm
+        supports-[backdrop-filter]:bg-[rgba(var(--bg-card),0.55)]
         p-4
         transition
         hover:border-[rgba(var(--accent),0.45)]

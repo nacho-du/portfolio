@@ -54,7 +54,18 @@ const groups = [
 
 function Card({ title, icon, items }) {
   return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-950/40 p-5 hover:bg-zinc-950/60 transition">
+    <div className="
+      rounded-2xl
+      border border-[rgba(var(--text-muted),0.25)]
+      bg-[rgba(var(--bg-card),0.7)]
+      backdrop-blur-md
+      supports-[backdrop-filter]:bg-[rgba(var(--bg-card),0.55)]
+      p-5
+      transition
+      hover:border-[rgba(var(--accent),0.45)]
+      hover:bg-[rgba(var(--bg-card),0.8)]
+      hover:shadow-[0_4px_16px_rgba(var(--accent),0.12)]
+      ">
       <div className="flex items-center gap-3 mb-3">
         <span className="text-zinc-300">{icon}</span>
         <h4 className="font-semibold text-zinc-100">{title}</h4>
