@@ -1,53 +1,84 @@
-import { FaPython, FaGitAlt, FaRobot } from "react-icons/fa";
+import { FaPython, FaGitAlt, FaRobot, FaPaintBrush } from "react-icons/fa";
 import { SiArduino, SiAutodesk } from "react-icons/si";
 import { MdPrecisionManufacturing, MdDesignServices } from "react-icons/md";
-import { LuNotebookPen, LuGlobe } from "react-icons/lu";
 
 const groups = [
   {
     title: "Programming",
     icon: <FaPython size={18} />,
-    items: ["Python", "MATLAB (Robotics System Toolbox)"],
+    items: [
+      "Python",
+      "MATLAB (Robotics System Toolbox)",
+      "React",
+      "Vite",
+      "Tailwind CSS"
+    ],
   },
   {
     title: "CAD & Design",
     icon: <MdDesignServices size={18} />,
-    items: ["SolidWorks", "Fusion 360"],
+    items: [
+            "SolidWorks",
+            "Fusion 360",
+            "Blender",
+          ],
   },
   {
     title: "Robotics",
     icon: <FaRobot size={18} />,
-    items: ["Inverse Kinematics", "Forward Kinematics", "Trajectory Planning", "PID Control", "Null-Space Control (Redundancy Resolution)"
+    items: [
+            "Inverse Kinematics",
+            "Forward Kinematics",
+            "Trajectory Planning",
+            "PID Control",
+            "Null-Space Control (Redundancy Resolution)"
     ],
 
   },
 
   {
-    title: "Manufacturing",
+    title: "Manufacturing & Simulation",
     icon: <MdPrecisionManufacturing size={18} />,
-    items: ["CNC Machining", "FDM / SLA 3D Printing"],
+    items: [
+            "CNC Machining",
+            "FDM / SLA 3D Printing", 
+            "Laser Cutting",,
+            "Stress Analysis", 
+            "CFD",
+            "ANSYS (FEA)" 
+          ],
   },
-  {
-    title: "Analysis & Simulation",
-    icon: <LuNotebookPen size={18} />,
-    items: ["Finite Element Analysis (FEA)", "Stress Analysis", "CFD"],
-  },
-
+ 
   {
     title: "Embedded Systems",
     icon: <SiArduino size={18} />,
-    items: ["Arduino", "Sensors", "Motor Drivers"],
+    items: [
+            "Arduino",
+            "Sensors", 
+            "Motor Drivers"
+          ],
   },
+
   {
-    title: "Web Development",
-    icon: <LuGlobe size={18} />,
-    items: ["React", "Vite", "Tailwind CSS", "GitHub Pages"],
-  },
-  {
-    title: "Tools",
+    title: "Technical Workflow",
     icon: <FaGitAlt size={18} />,
-    items: ["LaTeX", "Git / GitHub", "Technical Documentation"],
+    items: [
+            "Git / GitHub",
+            "LaTeX",
+            "Technical Documentation",
+            "Microsoft 365 (Excel, Word, PowerPoint, Teams)"
+          ],
   },
+  {
+    title: "Creative & Media",
+    icon: <FaPaintBrush size={18} />,
+    items: [
+      "Adobe After Effects",
+      "Adobe Photoshop",
+      "Adobe Illustrator"
+    ],
+  },
+
 ];
 
 

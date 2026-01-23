@@ -3,7 +3,7 @@ export const QUICK_PROJECTS = [
   {
     title: "CNC Toolpath Exercise",
     hidden : false,
-    org: "Design Fundamentals",
+    org: "Design Fundamentals - UTEP",
     description:
       "Generated and validated CNC toolpaths for Wood Block using CAM software.",
     tags: ["CNC", "CAM", "Manufacturing"],
@@ -25,7 +25,7 @@ export const QUICK_PROJECTS = [
   
   {
     title: "CO₂ Dragster – CFD Analysis",
-    org: "Design Fundamentals",
+    org: "Design Fundamentals - UTEP",
     description:
       "Modeled a CO₂ dragster in CAD, manufactured it using laser cutting, and evaluated aerodynamic performance using Autodesk CFD.",
     tags: [
@@ -35,7 +35,16 @@ export const QUICK_PROJECTS = [
       "Laser Cutting",
       "Aerodynamics",
     ],
-  } 
+  },
+  
+  {
+    title: "Stream Overlay Animations",
+    org: "Side Project",
+    description:
+      "Designed and animated a set of custom streaming overlays and scene transitions for a streaming use. The system included voice-reactive visual elements driven by audio levels, as well as key-triggered animations for stream start, end, and scene transitions, all built for use within OBS.",
+    tags: ["After Effects", "Media"],
+  }
+
 
 
 ];
