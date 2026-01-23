@@ -135,9 +135,9 @@ function QuickTag({ children }) {
     <span
       className="
         text-xs rounded-full px-2 py-1
-        border border-[rgba(var(--text-muted),0.25)]
-        text-[rgb(var(--text-muted))]
-      "
+        border border-[rgba(var(--accent),0.45)]
+        bg-[rgba(var(--accent),0.12)]
+        text-[rgb(var(--accent))]"
     >
       {children}
     </span>
@@ -179,7 +179,7 @@ function QuickProject({ p }) {
 
 export default function Projects() {
   return (
-    <section id="projects" data-topo="168 85 247" className="py-20 scroll-mt-24">
+    <section id="projects" data-topo="projects" className="py-20 scroll-mt-24">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-2xl">
           <h3 className="text-3xl font-bold tracking-tight flex items-center gap-3">

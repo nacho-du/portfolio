@@ -111,7 +111,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      data-topo="16 185 129"   // emerald (matches your accent)
+      data-topo="experience"   // emerald (matches your accent)
       className="py-20 scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto px-6">

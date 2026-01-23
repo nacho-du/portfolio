@@ -42,7 +42,7 @@ const groups = [
     items: [
             "CNC Machining",
             "FDM / SLA 3D Printing", 
-            "Laser Cutting",,
+            "Laser Cutting",
             "Stress Analysis", 
             "CFD",
             "ANSYS (FEA)" 
@@ -75,7 +75,9 @@ const groups = [
     items: [
       "Adobe After Effects",
       "Adobe Photoshop",
-      "Adobe Illustrator"
+      "Adobe Illustrator",
+      "Adobe Premier Pro",
+      "DaVinci Resolve",
     ],
   },
 
@@ -118,7 +120,7 @@ export default function TechStack() {
   return (
     <section
       id="tech"
-      data-topo="56 189 248"
+      data-topo="tech"
       className="py-20 scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto px-6">

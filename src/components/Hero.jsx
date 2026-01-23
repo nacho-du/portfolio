@@ -2,6 +2,7 @@ export default function Hero() {
   return (
     <section
       id="home"
+      data-topo="hero"
       className="min-h-screen flex items-center px-6"
     >
       <div className="max-w-6xl mx-auto w-full grid gap-12 lg:grid-cols-2 items-center">

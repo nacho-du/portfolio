@@ -1,6 +1,6 @@
 :root {
   /* Backgrounds */
-  --bg-main: 9 9 11;        /* zinc-950 */
+  --bg-main: 21 21 21;        /* zinc-950 */
   --bg-card: 24 24 27;      /* zinc-900 */
 
   /* Text */
@@ -10,8 +10,14 @@
   /* Accent (sage) */
   --accent: 16 185 129;     /* emerald-500 */
   
-  /* ...your existing vars... */
-  --topo-color: 16 185 129; /* default: same as accent */
+
+
+   /* Section / visual accents */
+    --topo-hero: 116 238 21;
+    --topo-tech: 255 231 0;
+    --topo-projects: 77 238 234;
+    --topo-experience: 240 0 255;
+    --topo-color: 16 185 129; /* default / hero */
 }
 
 @tailwind base;
