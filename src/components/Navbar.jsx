@@ -73,7 +73,7 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Desktop nav (unchanged) */}
-        <div className="hidden md:flex items-center gap-6 text-sm text-[rgb(var(--text-muted))]">
+        <div className="hidden md:flex items-center gap-6 text-lg text-[rgb(var(--text-muted))]">
           <button
             type="button"
             onClick={goHome}
