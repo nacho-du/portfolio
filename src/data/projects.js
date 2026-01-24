@@ -67,6 +67,7 @@ export const PROJECTS = [
         body:
           "Images and static files are served from the public directory using absolute paths and case-sensitive filenames to ensure reliable loading on GitHub Pages.",
       },
+      
     ],
 
    /* gallery: [
@@ -160,7 +161,20 @@ export const PROJECTS = [
 
     reportUrl: "reports/MECH_4332_Final_Report.pdf",
   },
-
+  
+  {
+      slug: "mechatronic-head",
+      title: "Mechatronic Head",
+      org: "Personal Project",
+      hidden: false,
+      status: "wip",
+      card: {
+        image: "/projects/<your-image-file>",
+        description: "A modular mechatronic head project focused on expandable facial features. Currently developing the eye mechanism and refining CAD components for full system integration.",
+        tags: ["Mecatronics", "CAD", "Fusion 360"],
+      },
+  },
+    
   {
     slug: "sun-tracker",
     title: "Sun Tracker - Group Project",
