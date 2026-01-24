@@ -112,7 +112,7 @@ export default function Navbar() {
         <div className="flex items-center w-full md:w-auto justify-between md:justify-end gap-3">
           {/* Resume (left on mobile) */}
           <a
-            href={`${import.meta.env.BASE_URL}Ignacio_Duarte_f25.pdf`}
+            href={`${import.meta.env.BASE_URL}Ignacio_Duarte_Resume.pdf`}
             className="
               text-sm px-4 py-2 rounded-md
               border border-[rgb(var(--accent))]
