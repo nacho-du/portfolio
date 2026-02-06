@@ -1,24 +1,23 @@
 :root {
-  /* Backgrounds */
-  --bg-main: 21 21 21;        /* zinc-950 */
-  --bg-card: 24 24 27;      /* zinc-900 */
+  /* Backgrounds (warm paper) */
+  --bg-main: 247 243 234;   /* cream */
+  --bg-card: 240 232 214;   /* warm sand */
 
-  /* Text */
-  --text-main: 244 244 245; /* zinc-100 */
-  --text-muted: 161 161 170;/* zinc-400 */
+  /* Text (warm ink) */
+  --text-main: 33 33 30;    /* near-black */
+  --text-muted: 94 88 78;   /* warm gray */
 
-  /* Accent (sage) */
-  --accent: 16 185 129;     /* emerald-500 */
-  
+  /* Accent (mid-century teal) */
+  --accent: 26 109 102;     /* teal */
 
-
-   /* Section / visual accents */
-    --topo-hero: 116 238 21;
-    --topo-tech: 255 231 0;
-    --topo-projects: 77 238 234;
-    --topo-experience: 240 0 255;
-    --topo-color: 16 185 129; /* default / hero */
+  /* Section / visual accents */
+  --topo-hero: 197 122 44;       /* mustard */
+  --topo-tech: 26 109 102;       /* teal */
+  --topo-projects: 174 74 64;    /* terracotta */
+  --topo-experience: 93 119 73;  /* olive */
+  --topo-color: 26 109 102;
 }
+
 
 @tailwind base;
 @tailwind components;
