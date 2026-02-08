@@ -1,22 +1,26 @@
 :root {
-  /* Backgrounds (warm paper) */
-  --bg-main: 247 243 234;   /* cream */
-  --bg-card: 240 232 214;   /* warm sand */
+  /* Base / paper */
+  --bg-main: 236 225 206;      /* warm paper */
+  --bg-card: 242 232 214;     /* slightly darker paper (optional) */
 
-  /* Text (warm ink) */
-  --text-main: 33 33 30;    /* near-black */
-  --text-muted: 94 88 78;   /* warm gray */
+  /* Ink / text */
+  --text-main: 33 33 30;
+  --text-muted: 94 88 78;
+  --ink: 40 35 30;
 
-  /* Accent (mid-century teal) */
-  --accent: 26 109 102;     /* teal */
+  /* Raw palette colors */
+  --accent-teal: 30 155 155;      /* cool anchor */
+  --accent-orange: 242 91 38;     /* energetic pop */
+  --accent-mustard: 249 170 28;   /* warm highlight */
 
-  /* Section / visual accents */
-  --topo-hero: 197 122 44;       /* mustard */
-  --topo-tech: 26 109 102;       /* teal */
-  --topo-projects: 174 74 64;    /* terracotta */
-  --topo-experience: 93 119 73;  /* olive */
-  --topo-color: 26 109 102;
+  /* Semantic roles */
+  --accent: var(--accent-teal);          /* buttons, links, active UI */
+  --accent-hero: var(--accent-mustard);  /* hero boomerang */
+  --accent-motif: var(--accent-orange);  /* small decorative motifs */
 }
+
+
+
 
 
 @tailwind base;

@@ -65,19 +65,28 @@ export default function Navbar() {
 
   return (
     <header
-      className="
-        sticky top-0 z-50
-        bg-[rgb(var(--bg-main))]
-        border-b border-[rgba(var(--text-muted),0.25)]
-      "
+    className="
+      sticky top-0 z-50
+      bg-[rgb(var(--bg-main))]
+      border-b border-[rgba(var(--text-muted),0.25)]
+      shadow-[0_1px_0_rgba(0,0,0,0.04)]
+    "
     >
+
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Desktop nav (unchanged) */}
-        <div className="hidden md:flex items-center gap-6 text-lg text-[rgb(var(--text-muted))]">
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-7">
           <button
             type="button"
             onClick={goHome}
-            className="text-[rgb(var(--accent))] hover:text-[rgba(var(--accent),0.85)] transition"
+            className="
+              inline-flex items-center justify-center
+              w-10 h-10 rounded-full
+              border border-[rgba(var(--ink,33,33,30),0.14)]
+              text-[rgb(var(--accent))]
+              hover:bg-[rgba(var(--accent),0.10)]
+              transition
+            "
             aria-label="Home"
           >
             <FiHome size={18} />
@@ -86,7 +95,13 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => goToSection("tech")}
-            className="hover:text-[rgb(var(--text-main))] transition"
+            className="
+              font-body text-sm
+              uppercase tracking-[0.18em]
+              text-[rgba(var(--text-main),0.72)]
+              hover:text-[rgb(var(--text-main))]
+              transition
+            "
           >
             Tech
           </button>
@@ -94,7 +109,13 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => goToSection("experience")}
-            className="hover:text-[rgb(var(--text-main))] transition"
+            className="
+              font-body text-sm
+              uppercase tracking-[0.18em]
+              text-[rgba(var(--text-main),0.72)]
+              hover:text-[rgb(var(--text-main))]
+              transition
+            "
           >
             Experience
           </button>
@@ -102,24 +123,36 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => goToSection("projects")}
-            className="hover:text-[rgb(var(--text-main))] transition"
+            className="
+              font-body text-sm
+              uppercase tracking-[0.18em]
+              text-[rgba(var(--text-main),0.72)]
+              hover:text-[rgb(var(--text-main))]
+              transition
+            "
           >
             Projects
           </button>
         </div>
 
-        {/* Right side: Resume LEFT, Hamburger RIGHT on mobile; desktop stays the same */}
+        {/* Right side */}
         <div className="flex items-center w-full md:w-auto justify-between md:justify-end gap-3">
-          {/* Resume (left on mobile) */}
+          {/* Resume */}
           <a
             href={`${import.meta.env.BASE_URL}Ignacio_Duarte_Resume.pdf`}
             className="
-              text-sm px-4 py-2 rounded-md
-              border border-[rgb(var(--accent))]
-              text-[rgb(var(--accent))]
-              hover:bg-[rgba(var(--accent),0.12)]
-              hover:text-[rgba(var(--accent),0.90)]
+              font-body text-sm
+              px-4 py-2 rounded-full
+              border border-[rgba(var(--ink,33,33,30),0.16)]
+              bg-[rgb(var(--bg-card))]
+              text-[rgba(var(--text-main),0.86)]
+              shadow-[0_3px_0_rgba(0,0,0,0.10)]
+              hover:shadow-[0_4px_0_rgba(0,0,0,0.12)]
+              hover:bg-[rgba(var(--accent),0.10)]
+              hover:border-[rgba(var(--accent),0.30)]
               transition
+              active:translate-y-[1px]
+              active:shadow-[0_2px_0_rgba(0,0,0,0.10)]
             "
             target="_blank"
             rel="noopener noreferrer"
@@ -127,16 +160,17 @@ export default function Navbar() {
             Resume
           </a>
 
-          {/* Hamburger (right on mobile) */}
+          {/* Hamburger (mobile) */}
           <button
             type="button"
             className="
               md:hidden
               inline-flex items-center justify-center
-              w-10 h-10 rounded-md
-              border border-[rgba(var(--text-muted),0.25)]
+              w-10 h-10 rounded-full
+              border border-[rgba(var(--ink,33,33,30),0.14)]
               text-[rgb(var(--text-main))]
-              hover:bg-[rgba(var(--text-muted),0.08)]
+              bg-[rgb(var(--bg-card))]
+              hover:bg-[rgba(var(--text-main),0.06)]
               transition
             "
             aria-label={open ? "Close menu" : "Open menu"}
@@ -146,7 +180,6 @@ export default function Navbar() {
             {open ? <FiX size={18} /> : <FiMenu size={18} />}
           </button>
         </div>
-
       </nav>
 
       {/* Mobile dropdown panel */}
@@ -154,10 +187,10 @@ export default function Navbar() {
         <div className="md:hidden px-6 pb-4" ref={panelRef}>
           <div
             className="
-              mt-2 rounded-xl
-              border border-[rgba(var(--text-muted),0.25)]
-              bg-[rgb(var(--bg-main))]
-              shadow-lg
+              mt-3 rounded-2xl
+              border border-[rgba(var(--ink,33,33,30),0.14)]
+              bg-[rgb(var(--bg-card))]
+              shadow-[0_10px_30px_rgba(0,0,0,0.10)]
               overflow-hidden
             "
           >
@@ -167,8 +200,9 @@ export default function Navbar() {
               className="
                 w-full flex items-center gap-2
                 px-4 py-3 text-sm
-                text-[rgb(var(--text-main))]
-                hover:bg-[rgba(var(--text-muted),0.08)]
+                font-body
+                text-[rgba(var(--text-main),0.88)]
+                hover:bg-[rgba(var(--accent),0.10)]
                 transition
               "
             >
@@ -176,14 +210,17 @@ export default function Navbar() {
               Home
             </button>
 
+            <div className="h-px bg-[rgba(var(--ink,33,33,30),0.10)]" />
+
             <button
               type="button"
               onClick={() => goToSection("tech")}
               className="
                 w-full text-left
                 px-4 py-3 text-sm
-                text-[rgb(var(--text-main))]
-                hover:bg-[rgba(var(--text-muted),0.08)]
+                font-body
+                text-[rgba(var(--text-main),0.88)]
+                hover:bg-[rgba(var(--accent),0.10)]
                 transition
               "
             >
@@ -196,8 +233,9 @@ export default function Navbar() {
               className="
                 w-full text-left
                 px-4 py-3 text-sm
-                text-[rgb(var(--text-main))]
-                hover:bg-[rgba(var(--text-muted),0.08)]
+                font-body
+                text-[rgba(var(--text-main),0.88)]
+                hover:bg-[rgba(var(--accent),0.10)]
                 transition
               "
             >
@@ -210,8 +248,9 @@ export default function Navbar() {
               className="
                 w-full text-left
                 px-4 py-3 text-sm
-                text-[rgb(var(--text-main))]
-                hover:bg-[rgba(var(--text-muted),0.08)]
+                font-body
+                text-[rgba(var(--text-main),0.88)]
+                hover:bg-[rgba(var(--accent),0.10)]
                 transition
               "
             >
