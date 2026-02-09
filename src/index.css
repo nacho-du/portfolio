@@ -15,8 +15,9 @@
 
   /* Semantic roles */
   --accent: var(--accent-teal);          /* buttons, links, active UI */
-  --accent-hero: var(--accent-mustard);  /* hero boomerang */
+  --accent-hero: var(--accent-teal);  /* hero boomerang */
   --accent-motif: var(--accent-orange);  /* small decorative motifs */
+  --accent-in: var(--accent-teal);
 }
 
 

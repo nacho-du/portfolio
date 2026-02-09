@@ -89,7 +89,7 @@ function Card({ title, icon, items }) {
   return (
     <div className="
       rounded-2xl
-      border border-[rgba(var(--text-muted),0.25)]
+      border border-[rgba(var(--ink),0.18)]
       bg-[rgba(var(--bg-card),0.7)]
       backdrop-blur-md
       supports-[backdrop-filter]:bg-[rgba(var(--bg-card),0.55)]
@@ -100,14 +100,19 @@ function Card({ title, icon, items }) {
       hover:shadow-[0_4px_16px_rgba(var(--accent),0.12)]
       ">
       <div className="flex items-center gap-3 mb-3">
-        <span className="text-zinc-300">{icon}</span>
-        <h4 className="font-semibold text-zinc-100">{title}</h4>
+        <span className="text-[rgb(var(--accent))]">
+          {icon}
+        </span>
+        <h4 className="font-semibold text-[rgb(var(--text-main))]">
+          {title}
+        </h4>
       </div>
 
-      <ul className="space-y-2 text-sm text-zinc-300">
+
+      <ul className="space-y-2 text-sm text-[rgb(var(--text-muted))]">
         {items.map((x) => (
           <li key={x} className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-zinc-500" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[rgb(var(--accent))]" />
             <span>{x}</span>
           </li>
         ))}
