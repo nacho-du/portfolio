@@ -1,5 +1,5 @@
 import Boomerang from "./Boomerang.jsx";
-import IgnacioMotif from "../assets/motif-hero-ignacio.svg";
+import IgnacioMotif from "../assets/motif-bg-hero-ignacio.svg";
 export default function Hero() {
   return (
     <section
