@@ -40,14 +40,12 @@ const experience = [
 
 function Tag({ children }) {
   return (
-    <span
-      className="
-        text-xs rounded-full px-2 py-1
-        border border-[rgba(var(--accent),0.45)]
-        bg-[rgba(var(--accent),0.12)]
-        text-[rgb(var(--accent))]
-      "
-    >
+    <span className="
+      text-xs rounded-full px-2 py-1
+      border border-[rgba(var(--accent),0.45)]
+      bg-[rgba(var(--accent),0.12)]
+      text-[rgb(var(--accent))]
+    ">
       {children}
     </span>
   );
@@ -55,22 +53,18 @@ function Tag({ children }) {
 
 function ExperienceItem({ item }) {
   return (
-    <div
-      className="
-        rounded-3xl
-        border border-[rgba(var(--text-muted),0.25)]
-        bg-[rgba(var(--bg-card),0.75)]
-        backdrop-blur-sm
-        supports-[backdrop-filter]:bg-[rgba(var(--bg-card),0.65)]
-        p-6 sm:p-8
-      "
-    >
+    <div className="
+      rounded-3xl
+      border border-[rgba(var(--text-muted),0.25)]
+      bg-[rgba(var(--bg-card),0.75)]
+      backdrop-blur-sm
+      supports-[backdrop-filter]:bg-[rgba(var(--bg-card),0.65)]
+      p-6 sm:p-8
+    ">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
         {/* Image */}
         <div className="lg:col-span-1">
-          <div className="h-full rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900">
-
-
+          <div className="h-full rounded-2xl overflow-hidden border border-[rgba(var(--text-muted),0.2)] bg-[rgb(var(--bg-card))]">
             <img
               src={item.image}
               alt={item.role}
@@ -82,23 +76,21 @@ function ExperienceItem({ item }) {
 
         {/* Content */}
         <div className="lg:col-span-2 flex flex-col">
-          <h4 className="text-xl font-semibold tracking-tight">{item.role}</h4>
-          <p className="text-sm text-zinc-400 mt-1">{item.org}</p>
-          <p className="text-sm text-zinc-500 mt-1">{item.date}</p>
+          <h4 className="text-xl font-semibold tracking-tight text-[rgb(var(--text-main))]">{item.role}</h4>
+          <p className="text-sm text-[rgb(var(--text-muted))] mt-1">{item.org}</p>
+          <p className="text-sm text-[rgba(var(--text-muted),0.7)] mt-1">{item.date}</p>
 
-          <ul className="mt-4 space-y-2 text-sm text-zinc-300">
+          <ul className="mt-4 space-y-2 text-sm text-[rgb(var(--text-main))]">
             {item.bullets.map((b) => (
               <li key={b} className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-zinc-500 shrink-0" />
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[rgb(var(--text-muted))] shrink-0" />
                 <span className="leading-relaxed">{b}</span>
               </li>
             ))}
           </ul>
 
           <div className="mt-4 flex flex-wrap gap-2">
-            {item.tags.map((t) => (
-              <Tag key={t}>{t}</Tag>
-            ))}
+            {item.tags.map((t) => <Tag key={t}>{t}</Tag>)}
           </div>
         </div>
       </div>
@@ -106,14 +98,9 @@ function ExperienceItem({ item }) {
   );
 }
 
-
 export default function Experience() {
   return (
-    <section
-      id="experience"
-      data-topo="experience"   // emerald (matches your accent)
-      className="py-20 scroll-mt-24"
-    >
+    <section id="experience" data-topo="experience" className="py-20 scroll-mt-24">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-2xl">
           <h3 className="text-3xl font-bold tracking-tight flex items-center gap-3">
@@ -121,7 +108,6 @@ export default function Experience() {
             Experience
           </h3>
         </div>
-
 
         <div className="mt-12 space-y-16">
           {experience.map((item) => (
