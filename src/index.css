@@ -1,25 +1,3 @@
-:root {
-  /* Backgrounds */
-  --bg-main: 21 21 21;        /* zinc-950 */
-  --bg-card: 24 24 27;      /* zinc-900 */
-
-  /* Text */
-  --text-main: 244 244 245; /* zinc-100 */
-  --text-muted: 161 161 170;/* zinc-400 */
-
-  /* Accent (sage) */
-  --accent: 16 185 129;     /* emerald-500 */
-  
-
-
-   /* Section / visual accents */
-    --topo-hero: 116 238 21;
-    --topo-tech: 255 231 0;
-    --topo-projects: 77 238 234;
-    --topo-experience: 240 0 255;
-    --topo-color: 16 185 129; /* default / hero */
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
