@@ -1,141 +1,60 @@
-import { FaPython, FaGitAlt, FaRobot, FaPaintBrush } from "react-icons/fa";
-import { SiArduino, SiAutodesk } from "react-icons/si";
-import { MdPrecisionManufacturing, MdDesignServices } from "react-icons/md";
-
-const groups = [
+const tech = [
   {
-    title: "Programming",
-    icon: <FaPython size={18} />,
-    items: [
-      "Python",
-      "MATLAB (Robotics System Toolbox)",
-      "React",
-      "Vite",
-      "Tailwind CSS"
-    ],
+    group: "Programming",
+    items: ["Python", "MATLAB (Robotics System Toolbox)", "React", "Vite", "Tailwind CSS"],
   },
   {
-    title: "CAD & Design",
-    icon: <MdDesignServices size={18} />,
-    items: [
-            "SolidWorks",
-            "Fusion 360",
-            "Blender",
-          ],
+    group: "CAD & Design",
+    items: ["SolidWorks", "Fusion 360", "Blender"],
   },
   {
-    title: "Robotics",
-    icon: <FaRobot size={18} />,
-    items: [
-            "Inverse Kinematics",
-            "Forward Kinematics",
-            "Trajectory Planning",
-            "PID Control",
-            "Null-Space Control (Redundancy Resolution)"
-    ],
-
-  },
-
-  {
-    title: "Manufacturing & Simulation",
-    icon: <MdPrecisionManufacturing size={18} />,
-    items: [
-            "CNC Machining",
-            "FDM / SLA 3D Printing", 
-            "Laser Cutting",
-            "Stress Analysis", 
-            "CFD",
-            "ANSYS (FEA)" 
-          ],
-  },
- 
-  {
-    title: "Embedded Systems",
-    icon: <SiArduino size={18} />,
-    items: [
-            "Arduino",
-            "Sensors", 
-            "Motor Drivers"
-          ],
-  },
-
-  {
-    title: "Technical Workflow",
-    icon: <FaGitAlt size={18} />,
-    items: [
-            "Git / GitHub",
-            "LaTeX",
-            "Technical Documentation",
-            "Microsoft 365 (Excel, Word, PowerPoint, Teams)"
-          ],
+    group: "Robotics",
+    items: ["Inverse Kinematics", "Forward Kinematics", "Trajectory Planning", "PID Control", "Null-Space Control (Redundancy Resolution)"],
   },
   {
-    title: "Creative & Media",
-    icon: <FaPaintBrush size={18} />,
-    items: [
-      "Adobe After Effects",
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Adobe Premier Pro",
-      "DaVinci Resolve",
-    ],
+    group: "Manufacturing & Simulation",
+    items: ["CNC Machining", "FDM / SLA 3D Printing", "Laser Cutting", "Stress Analysis", "CFD", "ANSYS (FEA)"],
   },
-
+  {
+    group: "Embedded Systems",
+    items: ["Arduino", "Sensors", "Motor Drivers"],
+  },
+  {
+    group: "Technical Workflow",
+    items: ["Git / GitHub", "LaTeX", "Technical Documentation", "Microsoft 365 (Excel, Word, PowerPoint, Teams)"],
+  },
+  {
+    group: "Creative & Media",
+    items: ["Adobe After Effects", "Adobe Photoshop", "Adobe Illustrator", "Adobe Premiere Pro", "DaVinci Resolve"],
+  },
 ];
 
-
-
-function Card({ title, icon, items }) {
-  return (
-    <div className="
-      rounded-2xl
-      border border-[rgba(var(--text-muted),0.25)]
-      bg-[rgba(var(--bg-card),0.7)]
-      backdrop-blur-md
-      supports-[backdrop-filter]:bg-[rgba(var(--bg-card),0.55)]
-      p-5
-      transition
-      hover:border-[rgba(var(--accent),0.45)]
-      hover:bg-[rgba(var(--bg-card),0.8)]
-      hover:shadow-[0_4px_16px_rgba(var(--accent),0.12)]
-      ">
-      <div className="flex items-center gap-3 mb-3">
-        <span className="text-zinc-300">{icon}</span>
-        <h4 className="font-semibold text-zinc-100">{title}</h4>
-      </div>
-
-      <ul className="space-y-2 text-sm text-zinc-300">
-        {items.map((x) => (
-          <li key={x} className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-zinc-500" />
-            <span>{x}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+const roman = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
 
 export default function TechStack() {
   return (
-    <section
-      id="tech"
-      data-topo="tech"
-      className="py-20 scroll-mt-24"
-    >
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-2xl mb-6">
-          <h3 className="text-3xl font-bold tracking-tight flex items-center gap-3">
-  <span className="h-6 w-1 rounded-full bg-[rgb(var(--accent))]" />
-  Technologies
-</h3>
-        
+    <section id="tech" className="section">
+      <div className="container">
+        <div className="section-head reveal">
+          <span className="idx">III.</span>
+          <h2>Tech &amp; Tools</h2>
+          <span className="rule" />
+          <span className="meta">{tech.reduce((a, g) => a + g.items.length, 0)} Tools</span>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {groups.map((g) => (
-            <Card key={g.title} title={g.title} icon={g.icon} items={g.items} />
-
+        <div className="tech-grid reveal-stagger">
+          {tech.map((group, i) => (
+            <div className="tech-card" key={group.group}>
+              <div className="head">
+                <span className="num">{roman[i] || (i + 1) + "."}</span>
+                <h3>{group.group}</h3>
+              </div>
+              <div className="tech-chips">
+                {group.items.map((t) => (
+                  <span key={t} className="tech-chip">{t}</span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,11 +1,5 @@
+@import './portfolio.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Global defaults */
-html,
-body {
-  background-color: rgb(var(--bg-main));
-  color: rgb(var(--text-main));
-  scroll-behavior: smooth;
-}

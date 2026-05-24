@@ -5,6 +5,9 @@ export const PROJECTS = [
     title: "Portfolio Website",
     org: "Personal Project",
     hidden: false,
+    thumb: "web",
+    blurb: "React + Vite + Tailwind portfolio deployed on GitHub Pages with data-driven case studies, WIP handling, and optional project reports.",
+    highlights: ["Data-driven case studies", "First-class WIP handling", "Optional per-project reports", "Deployed via GitHub Pages"],
 
     card: {
       image: "projects/portfolio-home.jpg",
@@ -85,6 +88,9 @@ export const PROJECTS = [
     title: "Kinova Gen3 End-Effector Controllers",
     org: "MECH 4332 – Mechanical Computational Applications in Vision and Robotics",
     hidden: false,
+    thumb: "robot",
+    blurb: "Inverse-kinematics-based controllers for a 7-DoF Kinova Gen3 manipulator, tracking end-effector trajectories with redundancy resolution.",
+    highlights: ["Position + orientation trajectory tracking", "Null-space motion with fixed EE", "Redundancy resolution at task level", "Validated in simulation"],
 
     card: {
       image: "projects/kinova-gen3-hero.png",
@@ -168,6 +174,9 @@ export const PROJECTS = [
       org: "Personal Project",
       hidden: false,
       status: "wip",
+      thumb: "head",
+      blurb: "Modular mechatronic head with expandable facial features. Actively developing the eye mechanism and refining CAD for full system integration.",
+      highlights: ["Modular architecture per facial feature", "Gimbaled eye mechanism in development", "CAD refinements for system integration", "Designed for iterative builds"],
       card: {
         image: "/projects/<your-image-file>",
         description: "A modular mechatronic head project focused on expandable facial features. Currently developing the eye mechanism and refining CAD components for full system integration.",
@@ -177,9 +186,12 @@ export const PROJECTS = [
     
   {
     slug: "sun-tracker",
-    title: "Sun Tracker - Group Project",
+    title: "Sun Tracker",
     org: "MECH 3103 – Mechatronics Lab (UTEP)",
     hidden: false,
+    thumb: "sun",
+    blurb: "Sunflower-inspired, low-cost dual-axis solar tracker using photoresistors and PID control to follow the sun.",
+    highlights: ["Dual-axis tracking (azimuth + elevation)", "Photoresistor differential sensing", "Tuned PID control loops", "Low-cost repeatable build"],
 
     card: {
       image: "projects/flower-full.png",
@@ -262,7 +274,9 @@ export const PROJECTS = [
   {
     slug: "filament-recycler",
     hidden: false,
-    // status: "wip",
+    thumb: "filament",
+    blurb: "Processing line to recycle 25+ kg of used PLA, with a troubleshot PID heating system enabling continuous extrusion.",
+    highlights: ["25+ kg PLA recycled to filament", "Continuous-melt thermal control", "PID troubleshooting under load", "End-to-end process design"],
     title: "Filament Recycler",
     org: "UTEP Greenfund",
 
@@ -323,10 +337,13 @@ export const PROJECTS = [
   },
 
   {
-    lug: "baja-buckle",
+    slug: "baja-buckle",
     title: "Baja Buckle",
     org: "MECH 3334 – Mechanical Design (UTEP)",
     hidden: false,
+    thumb: "buckle",
+    blurb: "Titanium buckle designed and validated via hand calculations and FEA to hold a 5000 N load above the required factor of safety.",
+    highlights: ["5000 N load case", "Hand calcs paired with FEA validation", "Factor of safety above requirement", "Ti-6Al-4V material"],
 
     card: {
       image: "projects/baja-buckle-cad.png",

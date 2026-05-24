@@ -1,37 +1,51 @@
-export default function Hero() {
+export default function Hero({ onJump }) {
   return (
-    <section
-      id="home"
-      data-topo="hero"
-      className="min-h-screen flex items-center px-6"
-    >
-      <div className="max-w-6xl mx-auto w-full grid gap-12 lg:grid-cols-2 items-center">
+    <section id="intro" className="section" style={{ paddingTop: 120 }}>
+      <div className="container">
+        <div className="intro">
 
-        {/* LEFT: Text */}
-        <div>
-          <p className="text-[rgb(var(--text-muted))] mb-3">Hi, I'm</p>
-
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
-            Ignacio Duarte
-          </h1>
-
-          <p className="text-xl md:text-2xl text-[rgb(var(--text-muted))] max-w-xl leading-relaxed">
-            I'm a mechanical engineering student at UTEP with a strong interest in hands-on
-            engineering, prototyping, and building real-world mechanical and robotic systems.
-          </p>
-        </div>
-
-        {/* RIGHT: Image */}
-        <div className="flex justify-center lg:justify-end">
-          <div className="w-64 md:w-80 aspect-[3/4] rounded-2xl overflow-hidden border border-[rgba(var(--text-muted),0.3)]">
-            <img
-              src="profile.jpg"
-              alt="Ignacio Duarte"
-              className="w-full h-full object-cover"
-            />
+          <div className="intro-photo reveal">
+            <img src={`${import.meta.env.BASE_URL}profile.jpg`} alt="Ignacio Duarte" />
+            <div className="caption">I. Duarte · 2026</div>
           </div>
-        </div>
 
+          <div className="intro-copy reveal-stagger">
+            <div className="eyebrow">Mechanical Engineer</div>
+            <h1>
+              Ignacio<br />Duarte
+            </h1>
+            <p className="subtitle">Robotics, mechatronics &amp; sustainable systems.</p>
+            <p className="lede">
+              I'm a mechanical engineering student at UTEP with a strong interest in
+              hands-on engineering, prototyping, and building real-world mechanical
+              and robotic systems.
+            </p>
+
+            <div className="intro-cta">
+              <a
+                href={`${import.meta.env.BASE_URL}Ignacio_Duarte_Resume.pdf`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-resume"
+              >
+                Resume
+                <span className="arrow">↗</span>
+              </a>
+              <a
+                href="#projects"
+                className="btn-secondary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onJump?.("projects");
+                }}
+              >
+                Selected Works
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );
