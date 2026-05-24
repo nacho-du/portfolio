@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { PROJECTS } from "../data/projects";
-import ProjectThumb from "./ProjectThumb";
 
 export default function Projects() {
   const visible = PROJECTS.filter((p) => !p.hidden);
@@ -20,7 +19,13 @@ export default function Projects() {
             const inner = (
               <>
                 <div className="proj-thumb">
-                  <ProjectThumb kind={p.thumb || "web"} />
+                  {p.card?.image ? (
+                    <img
+                      src={`${import.meta.env.BASE_URL}${p.card.image}`}
+                      alt={p.title}
+                      className="proj-thumb-img"
+                    />
+                  ) : null}
                   <div className="proj-thumb-overlay">
                     <span className="open-pill">
                       {p.status === "wip" ? "WIP" : "Open ↗"}
@@ -42,6 +47,11 @@ export default function Projects() {
                       <span key={s}>{s}</span>
                     ))}
                   </div>
+                  {p.status !== "wip" && p.slug && (
+                    <div className="proj-open-mobile">
+                      <span className="open-pill">Open ↗</span>
+                    </div>
+                  )}
                 </div>
               </>
             );

@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import ProjectThumb from "../components/ProjectThumb";
 import { getProject, getPrevNext, PROJECTS } from "../data/projects";
 
 const ROM = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV"];
@@ -77,6 +76,11 @@ export default function ProjectDetail() {
                 {project.role      && <div><dt>Role</dt><dd>{project.role}</dd></div>}
                 {project.status === "wip" && <div><dt>Status</dt><dd>In Progress</dd></div>}
               </dl>
+              {hasTools && (
+                <div className="pcs-tool-chips">
+                  {project.tools.map((t) => <span key={t} className="pcs-tool-chip">{t}</span>)}
+                </div>
+              )}
               {(project.reportUrl || project.repoUrl) && (
                 <div className="pcs-hero-actions">
                   {project.reportUrl && (
@@ -93,7 +97,13 @@ export default function ProjectDetail() {
               )}
             </div>
             <div className="pcs-plate">
-              <ProjectThumb kind={project.thumb || "web"} />
+              {project.heroImage ? (
+                <img
+                  src={`${import.meta.env.BASE_URL}${project.heroImage}`}
+                  alt={project.title}
+                  className="pcs-hero-img"
+                />
+              ) : null}
               <div className="pcs-plate-cap">Fig. {String(index + 1).padStart(2, "0")}</div>
             </div>
           </div>
@@ -153,14 +163,6 @@ export default function ProjectDetail() {
             </Section>
           )}
 
-          {/* Apparatus */}
-          {hasTools && (
-            <Section num={rom(sectionOffset++)} title="Apparatus">
-              <div className="pcs-stack">
-                {project.tools.map((s) => <span key={s}>{s}</span>)}
-              </div>
-            </Section>
-          )}
         </div>
       </div>
 

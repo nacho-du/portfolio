@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -105,8 +105,8 @@ export default function App() {
           <span
             key={i}
             className="star"
-            style={{ width: s.s, height: s.s, top: s.y, left: s.x, opacity: s.o }}
-          />
+            style={{ fontSize: s.s * 5, top: s.y, left: s.x, opacity: s.o }}
+          >✦</span>
         ))}
       </div>
 
