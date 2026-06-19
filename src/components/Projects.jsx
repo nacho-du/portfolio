@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
-import { PROJECTS } from "../data/projects";
+import { PROJECTS, PROJECT_ORDER } from "../data/projects";
+import { QUICK_PROJECTS } from "../data/quickProjects";
 
 export default function Projects() {
-  const visible = PROJECTS.filter((p) => !p.hidden);
+  const visible = PROJECT_ORDER
+    .map((slug) => PROJECTS.find((p) => p.slug === slug))
+    .filter((p) => p && !p.hidden);
 
   return (
     <section id="projects" className="section">
       <div className="container">
         <div className="section-head reveal">
-          <span className="idx">II.</span>
           <h2>Projects</h2>
           <span className="rule" />
-          <span className="meta">{visible.length} Projects</span>
         </div>
 
         <div className="proj-grid reveal-stagger">
@@ -26,11 +27,6 @@ export default function Projects() {
                       className="proj-thumb-img"
                     />
                   ) : null}
-                  <div className="proj-thumb-overlay">
-                    <span className="open-pill">
-                      {p.status === "wip" ? "WIP" : "Open ↗"}
-                    </span>
-                  </div>
                 </div>
                 <div className="proj-body">
                   <div className="proj-row">
@@ -38,7 +34,9 @@ export default function Projects() {
                       No. {String(i + 1).padStart(2, "0")} · {p.card?.tags?.[0] || ""}
                       {p.status === "wip" && " · WIP"}
                     </span>
-                    <span className="proj-arrow">↗</span>
+                    <span className="proj-arrow">
+                      {p.status === "wip" ? "WIP" : <span className="open-pill">See Details ↗</span>}
+                    </span>
                   </div>
                   <h3>{p.title}</h3>
                   <p>{p.blurb || p.card?.description}</p>
@@ -47,11 +45,7 @@ export default function Projects() {
                       <span key={s}>{s}</span>
                     ))}
                   </div>
-                  {p.status !== "wip" && p.slug && (
-                    <div className="proj-open-mobile">
-                      <span className="open-pill">Open ↗</span>
-                    </div>
-                  )}
+
                 </div>
               </>
             );
@@ -76,6 +70,27 @@ export default function Projects() {
             );
           })}
         </div>
+
+        {QUICK_PROJECTS.filter((p) => !p.hidden).length > 0 && (
+          <div className="quick-projects reveal">
+            <h4 className="quick-projects-heading">Additional Projects</h4>
+            <div className="quick-grid">
+              {QUICK_PROJECTS.filter((p) => !p.hidden).map((p) => (
+                <div className="quick-card" key={p.title}>
+                  <div className="quick-card-top">
+                    <span className="quick-card-title">{p.title}</span>
+                    {p.org && <span className="quick-card-org">{p.org}</span>}
+                  </div>
+                  <p className="quick-card-desc">{p.description}</p>
+                  <div className="quick-card-tags">
+                    {p.tags?.map((t) => <span key={t}>{t}</span>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     </section>
   );

@@ -28,15 +28,15 @@ const experience = [
   },
   {
     role: "President",
-    company: "Environmental Stewardship Initiative",
-    tag: "Non-Profit",
+    company: "Environmental Stewardship Initiative - Cathedral High School",
+    tag: "Student Leadership",
     date: "2020 — 2022",
     image: `${import.meta.env.BASE_URL}experience/sesi.JPEG`,
     tags: ["Leadership", "Grant Writing", "Environmental Projects"],
     bullets: [
       "Led a team of 60+ students focused on environmental restoration initiatives.",
       "Authored and submitted an EPA-approved project proposal securing $10,000 in funding.",
-      "Planned and executed land restoration projects with data collected for publication.",
+      "Planned and executed land restoration project with data collected for publication.",
     ],
   },
 ];
@@ -46,10 +46,8 @@ export default function Experience() {
     <section id="experience" className="section">
       <div className="container">
         <div className="section-head reveal">
-          <span className="idx">I.</span>
           <h2>Experience</h2>
           <span className="rule" />
-          <span className="meta">{experience.length} Roles</span>
         </div>
 
         <div className="exp-list reveal-stagger">
@@ -66,7 +64,6 @@ export default function Experience() {
                 )}
               </div>
               <div className="exp-body">
-                <span className="tag">{item.tag}</span>
                 <h3>{item.role}</h3>
                 <div className="exp-company">{item.company}</div>
                 <div className="exp-date">{item.date}</div>

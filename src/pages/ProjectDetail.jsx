@@ -2,14 +2,11 @@ import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getProject, getPrevNext, PROJECTS } from "../data/projects";
 
-const ROM = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV"];
-const rom = (n) => ROM[n - 1] || String(n);
-
-function Section({ num, title, children }) {
+function Section({ title, children }) {
   return (
     <div className="pcs-section">
       <div className="pcs-section-side">
-        <div className="pcs-section-num">{num} · {title}</div>
+        <div className="pcs-section-num">{title}</div>
       </div>
       <div className="pcs-section-body">
         <h2>{title}</h2>
@@ -39,10 +36,8 @@ export default function ProjectDetail() {
     );
   }
 
-  const chapterNum = index >= 0 ? rom(index + 1) : "?";
   const tag = project.card?.tags?.[0] || "";
 
-  let sectionOffset = 1;
   const hasSections = project.sections?.length > 0;
   const hasHighlights = project.highlights?.length > 0;
   const hasTools = (project.tools || []).length > 0;
@@ -65,9 +60,8 @@ export default function ProjectDetail() {
           <div className="pcs-hero-grid">
             <div>
               <div className="pcs-hero-meta-line">
-                Chapter {chapterNum}
-                {tag && <><span className="dot">·</span>{tag}</>}
-                {project.timeframe && <><span className="dot">·</span>{project.timeframe}</>}
+                {tag}
+                {project.timeframe && <>{tag && <span className="dot">·</span>}{project.timeframe}</>}
               </div>
               <h1 className="pcs-hero-title">{project.title}</h1>
               <p className="pcs-hero-lede">{project.blurb || project.card?.description}</p>
@@ -116,14 +110,14 @@ export default function ProjectDetail() {
 
           {/* Overview */}
           {project.overview && (
-            <Section num={rom(sectionOffset++)} title="Overview">
+            <Section title="Overview">
               <p>{project.overview}</p>
             </Section>
           )}
 
           {/* Process / cards */}
           {project.cards?.length > 0 && (
-            <Section num={rom(sectionOffset++)} title="Process">
+            <Section title="Process">
               {project.cards.map((c, i) => (
                 <div className="pcs-step" key={i}>
                   <div className="pcs-step-label">{c.title}</div>
@@ -135,14 +129,14 @@ export default function ProjectDetail() {
 
           {/* Sections */}
           {hasSections && project.sections.map((s, i) => (
-            <Section key={i} num={rom(sectionOffset++)} title={s.heading}>
+            <Section key={i} title={s.heading}>
               <p>{s.body}</p>
             </Section>
           ))}
 
           {/* Highlights */}
           {hasHighlights && (
-            <Section num={rom(sectionOffset++)} title="Highlights">
+            <Section title="Highlights">
               <ul className="pcs-list">
                 {project.highlights.map((h, i) => <li key={i}>{h}</li>)}
               </ul>
@@ -151,7 +145,7 @@ export default function ProjectDetail() {
 
           {/* Gallery */}
           {project.gallery?.length > 0 && (
-            <Section num={rom(sectionOffset++)} title="Gallery">
+            <Section title="Gallery">
               <div className="pcs-gallery">
                 {project.gallery.map((img) => (
                   <div className="pcs-gallery-item" key={img.src}>

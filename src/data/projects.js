@@ -1,92 +1,10 @@
 export const PROJECTS = [
-  
-  {
-    slug: "portfolio-website",
-    title: "Portfolio Website",
-    org: "Personal Project",
-    hidden: false,
-    thumb: "web",
-    blurb: "React + Vite + Tailwind portfolio deployed on GitHub Pages with data-driven case studies, WIP handling, and optional project reports.",
-    highlights: ["Data-driven case studies", "First-class WIP handling", "Optional per-project reports", "Deployed via GitHub Pages"],
 
-    card: {
-      image: "projects/portfolio-home.jpg",
-      description:
-        "A React + Vite + Tailwind portfolio deployed on GitHub Pages, featuring data-driven case studies, WIP handling, and optional project reports.",
-      tags: [
-        "React",
-        "Vite",
-        "Tailwind",
-        "GitHub Pages",
-        "React Router",
-      ],
-    },
-
-    heroImage: "projects/portfolio-home.jpg",
-    timeframe: "Jan 2026",
-    role: "Designer & Developer",
-    tools: [
-      "React",
-      "Vite",
-      "Tailwind CSS",
-      "React Router",
-      "GitHub Pages",
-      "gh-pages",
-    ],
-    overview:
-      "This portfolio website was built to showcase engineering and software projects in a clean, scalable format. The site uses a data-driven project system that powers both the homepage and individual case-study pages. It supports work-in-progress states, optional project reports, and GitHub Pages–safe asset handling, making it easy to maintain and extend over time.",
-
-    cards: [
-      {
-        title: "Project Goal",
-        body:
-          "Design a fast, modern portfolio that highlights projects through detailed pages while remaining easy to update and deploy.",
-      },
-      {
-        title: "Key Features",
-        body:
-          "Projects are defined in a single data file and rendered dynamically across the site, with support for Work in Progress states, image galleries, and optional report links.",
-      },
-      {
-        title: "Deployment Workflow",
-        body:
-          "The site is built with Vite and deployed to GitHub Pages using a consistent base path and a simple npm deploy command.",
-      },
-    ],
-
-    sections: [
-      {
-        heading: "Architecture & Data Model",
-        body:
-          "Featured projects are stored in a centralized data file and rendered across the homepage and detail pages using helper functions. This approach keeps content and layout cleanly separated.",
-      },
-      {
-        heading: "Routing & User Experience",
-        body:
-          "Each project has a dedicated detail page with slug-based routing and previous/next navigation. Work-in-progress projects are clearly labeled and intentionally non-clickable.",
-      },
-      {
-        heading: "Assets & GitHub Pages Constraints",
-        body:
-          "Images and static files are served from the public directory using absolute paths and case-sensitive filenames to ensure reliable loading on GitHub Pages.",
-      },
-      
-    ],
-
-   /* gallery: [
-      {
-        src: "/projects/portfolio-home.png",
-        alt: "Portfolio homepage showing featured project cards",
-      },
-    ],
-    */
-    repoUrl: "https://github.com/nacho-du/portfolio",
-  },
 
   {
     slug: "kinova-gen3-controllers",
     title: "Kinova Gen3 End-Effector Controllers",
-    org: "MECH 4332 – Mechanical Computational Applications in Vision and Robotics",
+    org: "Mechanical Computational Applications in Vision and Robotics",
     hidden: false,
     thumb: "robot",
     blurb: "Inverse-kinematics-based controllers for a 7-DoF Kinova Gen3 manipulator, tracking end-effector trajectories with redundancy resolution.",
@@ -107,7 +25,7 @@ export const PROJECTS = [
 
     heroImage: "projects/kinova-gen3-hero.png",
     timeframe: "Fall 2025",
-    role: "Controls & Robotics",
+    role: "",
     tools: [
       "MATLAB",
       "Robotics System Toolbox",
@@ -167,36 +85,21 @@ export const PROJECTS = [
 
     reportUrl: "reports/MECH_4332_Final_Report.pdf",
   },
-  
-  {
-      slug: "mechatronic-head",
-      title: "Mechatronic Head",
-      org: "Personal Project",
-      hidden: false,
-      status: "wip",
-      thumb: "head",
-      blurb: "Modular mechatronic head with expandable facial features. Actively developing the eye mechanism and refining CAD for full system integration.",
-      highlights: ["Modular architecture per facial feature", "Gimbaled eye mechanism in development", "CAD refinements for system integration", "Designed for iterative builds"],
-      card: {
-        image: "/projects/<your-image-file>",
-        description: "A modular mechatronic head project focused on expandable facial features. Currently developing the eye mechanism and refining CAD components for full system integration.",
-        tags: ["Mecatronics", "CAD", "Fusion 360"],
-      },
-  },
     
   {
     slug: "sun-tracker",
     title: "Sun Tracker",
     org: "MECH 3103 – Mechatronics Lab (UTEP)",
     hidden: false,
+
     thumb: "sun",
-    blurb: "Sunflower-inspired, low-cost dual-axis solar tracker using photoresistors and PID control to follow the sun.",
-    highlights: ["Dual-axis tracking (azimuth + elevation)", "Photoresistor differential sensing", "Tuned PID control loops", "Low-cost repeatable build"],
+    blurb: "3D Printed Sunflower-inspired, low-cost dual-axis solar tracker using photoresistors and PID control to follow light source.",
+    highlights: ["Dual-axis tracking", "Photoresistor differential sensing", "Tuned PID control loops", "Low-cost repeatable build"],
 
     card: {
       image: "projects/flower-full.png",
       description:
-        "A sunflower-inspired, low-cost solar tracking system that uses photoresistors and PID control to follow sunlight across two axes.",
+        "A 3D printed sunflower-inspired, low-cost solar tracking system that uses photoresistors and PID control to follow light source across two axes.",
       tags: [
         "Mechatronics",
         "Arduino",
@@ -211,12 +114,12 @@ export const PROJECTS = [
     role:"Role - Design and Implementation",
     tools: [
       "Arduino Uno",
+      "FDM 3D Printing",
       "Photoresistors (LDRs)",
       "PID Control",
       "Servo Motors (SG-90)",
       "Autodesk Fusion 360",
-      "TinkerCAD",
-      "FDM 3D Printing",
+      
     ],
     overview:
       "Sun Tracker is a two-axis solar tracking system inspired by the natural motion of a sunflower. The system uses four photoresistors to detect light direction and a closed-loop PID controller to drive pan and tilt servo motors. While the project emphasized low-cost components and accessible fabrication methods, it successfully demonstrated sensor-driven control logic, PID tuning, and the challenges of integrating mechanical, electrical, and software subsystems into a single mechatronic system.",
@@ -274,8 +177,9 @@ export const PROJECTS = [
   {
     slug: "filament-recycler",
     hidden: false,
+    noDetail : true,
     thumb: "filament",
-    blurb: "Processing line to recycle 25+ kg of used PLA, with a troubleshot PID heating system enabling continuous extrusion.",
+    blurb: "Designed a processing line to recycle 25+ kg of used PLA, troubleshot and tuned a PID heating system enabling continuous extrusion.",
     highlights: ["25+ kg PLA recycled to filament", "Continuous-melt thermal control", "PID troubleshooting under load", "End-to-end process design"],
     title: "Filament Recycler",
     org: "UTEP Greenfund",
@@ -284,7 +188,7 @@ export const PROJECTS = [
     card: {
       image: "projects/filament-recycler.JPEG",
       description:
-        "Designed a processing line to recycle 25+ kg of used PLA and troubleshot a PID heating system to enable continuous melting.",
+        "Designed a processing line to recycle 25+ kg of used PLA, troubleshot and tuned a PID heating system enabling continuous extrusion.",
       tags: ["Additive Manufacturing", "PID Control", "Design"],
     },
 
@@ -336,98 +240,158 @@ export const PROJECTS = [
     ],
   },
 
-  {
-    slug: "baja-buckle",
-    title: "Baja Buckle",
-    org: "MECH 3334 – Mechanical Design (UTEP)",
-    hidden: false,
-    thumb: "buckle",
-    blurb: "Titanium buckle designed and validated via hand calculations and FEA to hold a 5000 N load above the required factor of safety.",
-    highlights: ["5000 N load case", "Hand calcs paired with FEA validation", "Factor of safety above requirement", "Ti-6Al-4V material"],
 
+  {
+    slug: "peppers-ghost",           // URL: /projects/your-project-slug
+    title: "Peppers Ghost Using Unreal Engine",
+    org: "Personal Project",
+    hidden: false,                        // true = hides from homepage
+    thumb: "icon",                        // icon label (robot, sun, buckle, etc.)
+    blurb: "Peppers Ghost Illusion using custom media created using Unreal Engine and Motion Capture",
+    highlights: ["Key point 1", "Key point 2", "Key point 3"],
+
+    // --- Homepage card ---
     card: {
-      image: "projects/baja-buckle-cad.png",
-      description:
-        "Designed and validated a titanium buckle through hand calculations and finite element analysis to safely withstand a 5000 N load with a factor of safety above design requirements.",
-      tags: [
-        "Mechanical Design",
-        "FEA",
-        "Stress Analysis",
-        "Fusion 360",
-        "CAD",
-      ],
+      image: "projects/your-image.jpg",  // place image in public/projects/
+      description: "2–3 sentence description shown on the card.",
+      tags: ["Tool 1", "Tool 2", "Tool 3"],
     },
 
-    heroImage: "projects/baja-buckle-cad.png",
+    // --- Detail page ---
+    heroImage: "projects/your-image.jpg",
     timeframe: "Fall 2025",
-    role: "Mechanical Design Engineer (Student)",
-    tools: [
-      "Autodesk Fusion 360",
-      "Finite Element Analysis (FEA)",
-      "Hand Stress Calculations",
-      "Titanium Ti-6Al-4V",
-      "FDM 3D Printing",
+    role: "Your Role",
+    tools: ["Tool 1", "Tool 2", "Tool 3"],
+    overview: "Longer paragraph describing the project for the detail page.",
+
+    cards: [
+      { title: "Card Title 1", body: "Short paragraph." },
+      { title: "Card Title 2", body: "Short paragraph." },
+      { title: "Card Title 3", body: "Short paragraph." },
     ],
+
+    sections: [
+      { heading: "Section Heading", body: "Longer body text for this section." },
+      { heading: "Section Heading", body: "Longer body text for this section." },
+    ],
+
+    gallery: [
+      { src: "projects/your-image.jpg", alt: "Description of image" },
+    ],
+
+    // reportUrl: "reports/your-report.pdf",  // uncomment if you have a PDF
+    // repoUrl: "https://github.com/...",     // uncomment if you have a repo link
+  },
+
+  {
+    slug: "university-rover-challenge",
+    title: "University Rover Challenge",
+    org: "UTEP Capstone Projects",
+    hidden: false,
+    thumb: "rover",
+    blurb: "Leading mechanical design and project coordination for Capstone project designing a Mars rover for the University Rover Challenge, leading sub-teams and fabricating a modular robotic arm.",
+    highlights: ["Designed arm manipulator with modular attachment system", "Led FDM 3D printing fabrication for structural components", "Coordinated sub-teams on timelines and deliverables"],
+
+    card: {
+      image: "projects/rover.jpg",
+      description: "",
+      tags: ["Robotics", "Project Management", "Fusion 360", "FDM Printing"],
+    },
+
+    heroImage: "projects/rover.jpg",
+    timeframe: "Jan 2026 – Present",
+    role: "Project Manager",
+    tools: ["Fusion 360", "FDM 3D Printing", "MS Teams", "Project Management"],
     overview:
-      "The Baja Buckle project focused on the design, analysis, and validation of a load-bearing buckle intended for a one-inch strap interface. The component was modeled in Autodesk Fusion 360 and evaluated under a 5000 N load using both hand calculations and finite element analysis. Results confirmed that the design meets safety requirements, with FEA predicting a minimum factor of safety of 3.51 and negligible deformation.",
+      "As Project Manager for the URC team at UTEP I coordinated sub-teams, engineered a modular arm attachment system, and managed FDM fabrication of structural components.",
 
     cards: [
       {
-        title: "Design Objective",
-        body:
-          "Design a compact, load-bearing buckle capable of supporting a 5000 N tensile load while maintaining a minimum factor of safety of 3.0 and compatibility with a one-inch strap.",
+        title: "Project Management",
+        body: "Coordinated with sub-teams across mechanical, electrical, and software disciplines to align timelines and deliverables toward competition deadlines.",
       },
       {
-        title: "Structural Validation",
-        body:
-          "The buckle was validated using both hand stress calculations and finite element analysis. Critical regions such as the slot fillet and pin hole were analyzed for axial, bending, and bearing stresses.",
+        title: "Modular Arm Design",
+        body: "Engineered robotic arm, including a modular attachment system that allows detachment from the rover chassis, reducing swap time.",
       },
       {
-        title: "Manufacturing & Prototyping",
-        body:
-        "Final geometry was documented through detailed engineering drawings and verified using a 3D-printed prototype to confirm strap fit and dimensional accuracy.",
+        title: "Fabrication",
+        body: "Led 3D printing fabrication efforts using FDM technology, iterating on designs based on fit and load requirements while balancing print parameters — including material selection, infill density, and print orientation — for strength, weight, and dimensional accuracy.",
       },
     ],
 
     sections: [
       {
-        heading: "Finite Element Analysis",
-        body:
-          "A static FEA study was conducted in Fusion 360 using Ti-6Al-4V material properties. A 5000 N load was applied at the strap slot while the bottom pin hole was fully constrained. Results showed a maximum von Mises stress of approximately 251 MPa and a minimum factor of safety of 3.51.",
+        heading: "Role & Responsibilities",
+        body: "As Project Manager, I coordinate sub-team leads, track deliverables, and ensure design decisions align with Capstone Requirments. I also contribute directly to mechanical design and fabrication.",
       },
       {
-        heading: "Hand Stress Calculations",
-        body:
-          "Manual calculations were performed at critical locations including the slot fillet and bottom pin hole. The slot fillet experienced combined axial and bending stress, resulting in a conservative factor of safety of 1.25, while the pin hole exhibited a factor of safety of 5.57.",
+        heading: "Arm Attachment System",
+        body: "The modular arm attachment system was designed for rapid field reconfiguration without tools. The design prioritizes structural integrity under load while keeping the interface simple enough for quick swaps during competition.",
       },
-      {
-        heading: "Prototyping & Verification",
-        body:
-          "A physical prototype was produced using FDM 3D printing with a 0.2 mm layer height. The prototype verified dimensional accuracy and confirmed proper fit for the one-inch strap requirement.",
-      },
+    ],
+
+    // gallery: [],
+    // reportUrl: "reports/rover-report.pdf",
+    // repoUrl: "https://github.com/...",
+  },
+
+  // ProjectTemplate
+  { 
+    slug: "your-project-slug",           // URL: /projects/your-project-slug
+    title: "Your Project Title",
+    org: "Class name, org, or Personal Project",
+    hidden: false,                        // true = hides from homepage
+    thumb: "icon",                        // not USED icon label (robot, sun, buckle, etc.)
+    noDetail: true,   // ← hides button and disables link
+    blurb: "One sentence shown on hover or in lists.",
+    highlights: ["Key point 1", "Key point 2", "Key point 3"],
+
+    // --- Homepage card ---
+    card: {
+      image: "projects/your-image.jpg",  // place image in public/projects/
+      description: "2–3 sentence description shown on the card.",
+      tags: ["Tool 1", "Tool 2", "Tool 3"],
+    },
+
+    // --- Detail page ---
+    heroImage: "projects/your-image.jpg",
+    timeframe: "Fall 2025",
+    role: "Your Role",
+    tools: ["Tool 1", "Tool 2", "Tool 3"],
+    overview: "Longer paragraph describing the project for the detail page.",
+
+    cards: [
+      { title: "Card Title 1", body: "Short paragraph." },
+      { title: "Card Title 2", body: "Short paragraph." },
+      { title: "Card Title 3", body: "Short paragraph." },
+    ],
+
+    sections: [
+      { heading: "Section Heading", body: "Longer body text for this section." },
+      { heading: "Section Heading", body: "Longer body text for this section." },
     ],
 
     gallery: [
-      {
-        src: "projects/mech-design-results-2x.png",
-        alt: "Finite element analysis results showing safety factor distribution",
-      },
-      {
-        src: "projects/mech-design-von-mises.png",
-        alt: "Von Mises stress distribution highlighting critical regions",
-      },
-      {
-        src: "projects/MECH-Design-MESH.png",
-        alt: "MESH view of CAD Model",
-      },
+      { src: "projects/your-image.jpg", alt: "Description of image" },
     ],
 
-    reportUrl: "reports/Mech_Design_Final_Project.pdf",
+    // reportUrl: "reports/your-report.pdf",  // uncomment if you have a PDF
+    // repoUrl: "https://github.com/...",     // uncomment if you have a repo link
   },
 
-  
-
   // Add New Projects above here
+];
+
+// Controls display order on the homepage. Add a new slug here when you add a project.
+export const PROJECT_ORDER = [
+  "university-rover-challenge",
+  "kinova-gen3-controllers",
+  "sun-tracker",
+  "portfolio-website",
+  "filament-recycler",
+  "baja-buckle",
+  "peppers-ghost",
 ];
 
 

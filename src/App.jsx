@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import SideRails from "./components/SideRails";
 import ProjectDetail from "./pages/ProjectDetail";
 import ScrollToHash from "./components/ScrollToHash";
+import NewProjects from "./components/Projects_new";
 
 const STARS = [
   { x: "4%",  y: "8%",  s: 2,   o: 0.45 },
@@ -88,7 +89,7 @@ function MainPage() {
       <main>
         <Hero onJump={jump} />
         <Experience />
-        <Projects />
+        <NewProjects />
         <TechStack />
       </main>
       <Footer onJump={jump} />

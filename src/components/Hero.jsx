@@ -14,11 +14,10 @@ export default function Hero({ onJump }) {
             <h1>
               Ignacio<br />Duarte
             </h1>
-            <p className="subtitle">Robotics, mechatronics &amp; sustainable systems.</p>
+            <p className="subtitle">Building systems. Engineering wonder.</p>
             <p className="lede">
-              I'm a mechanical engineering student at UTEP with a strong interest in
-              hands-on engineering, prototyping, and building real-world mechanical
-              and robotic systems.
+              I'm a Mechanical Engineering student at UTEP with a strong interest in hands-on engineering, 
+              prototyping, and building systems that don't just function, they astonish.
             </p>
 
             <div className="intro-cta">
@@ -39,7 +38,7 @@ export default function Hero({ onJump }) {
                   onJump?.("projects");
                 }}
               >
-                Selected Works
+                Projects
                 <span>→</span>
               </a>
             </div>
