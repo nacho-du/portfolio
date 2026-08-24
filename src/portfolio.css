@@ -40,7 +40,7 @@ html, body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -579,9 +579,31 @@ section.section:first-of-type { padding-top: 140px; }
 .proj-body p {
   margin: 0;
   color: var(--text-soft);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   flex: 1;
+}
+.proj-highlights {
+  list-style: none;
+  margin: 12px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.proj-highlights li {
+  font-size: 16px;
+  color: var(--text-soft);
+  line-height: 1.4;
+  padding-left: 14px;
+  position: relative;
+}
+.proj-highlights li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--brass);
+  font-size: 11px;
 }
 .proj-stack {
   display: flex; flex-wrap: wrap; gap: 6px;
@@ -728,7 +750,7 @@ section.section:first-of-type { padding-top: 140px; }
 }
 .modal-grid li {
   font-family: var(--font-serif);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text);
   padding-left: 18px;
   position: relative;
@@ -1204,7 +1226,7 @@ footer .row a:hover { color: var(--brass); }
 }
 .folio-marginalia li {
   position: relative; padding-left: 14px;
-  font-size: 14px; color: var(--text);
+  font-size: 16px; color: var(--text);
   line-height: 1.5;
 }
 .folio-marginalia li::before {
@@ -1244,7 +1266,7 @@ footer .row a:hover { color: var(--brass); }
 }
 .modal-case .case-list li {
   position: relative; padding-left: 20px;
-  font-size: 15px; color: var(--text);
+  font-size: 16px; color: var(--text);
 }
 .modal-case .case-list li::before {
   content: "—"; position: absolute; left: 0; color: var(--brass);
@@ -1347,7 +1369,7 @@ footer .row a:hover { color: var(--brass); }
 .proj-hero-meta dd {
   margin: 0;
   font-family: var(--font-italic); font-style: italic;
-  font-size: 15px; color: var(--text);
+  font-size: 16px; color: var(--text);
 }
 .proj-hero-plate {
   aspect-ratio: 16/10;

@@ -16,7 +16,7 @@ export default function Projects() {
         </div>
 
         <div className="proj-grid reveal-stagger">
-          {visible.map((p, i) => {
+          {visible.map((p) => {
             const inner = (
               <>
                 <div className="proj-thumb">
@@ -30,16 +30,20 @@ export default function Projects() {
                 </div>
                 <div className="proj-body">
                   <div className="proj-row">
-                    <span className="proj-tag">
-                      No. {String(i + 1).padStart(2, "0")} · {p.card?.tags?.[0] || ""}
-                      {p.status === "wip" && " · WIP"}
-                    </span>
                     <span className="proj-arrow">
-                      {p.status === "wip" ? "WIP" : <span className="open-pill">See Details ↗</span>}
+                      {p.status === "wip" && "WIP"}
+                      {!p.status && !p.noDetail && <span className="open-pill">See Details ↗</span>}
                     </span>
                   </div>
                   <h3>{p.title}</h3>
                   <p>{p.blurb || p.card?.description}</p>
+                  {p.highlights?.length > 0 && (
+                    <ul className="proj-highlights">
+                      {p.highlights.map((h, j) => (
+                        <li key={j}>{h}</li>
+                      ))}
+                    </ul>
+                  )}
                   <div className="proj-stack">
                     {(p.card?.tags || p.tools || []).slice(0, 4).map((s) => (
                       <span key={s}>{s}</span>
@@ -50,7 +54,7 @@ export default function Projects() {
               </>
             );
 
-            if (p.status === "wip" || !p.slug) {
+            if (p.status === "wip" || !p.slug || p.noDetail) {
               return (
                 <article className="proj-card proj-card--wip" key={p.slug || p.title}>
                   {inner}

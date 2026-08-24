@@ -3,7 +3,7 @@ export const PROJECTS = [
 
   {
     slug: "kinova-gen3-controllers",
-    title: "Kinova Gen3 End-Effector Controllers",
+    title: "End-Effector Controllers",
     org: "Mechanical Computational Applications in Vision and Robotics",
     hidden: false,
     thumb: "robot",
@@ -246,10 +246,10 @@ export const PROJECTS = [
     title: "Peppers Ghost Using Unreal Engine",
     org: "Personal Project",
     hidden: false,                        // true = hides from homepage
+    noDetail: true,
     thumb: "icon",                        // icon label (robot, sun, buckle, etc.)
-    blurb: "Peppers Ghost Illusion using custom media created using Unreal Engine and Motion Capture",
-    highlights: ["Key point 1", "Key point 2", "Key point 3"],
-
+    blurb: "Designed and built a self-contained Pepper's Ghost illusion integrating motion capture animation with a synchronized practical lighting effect.",
+    highlights: ["Produced character animation in Unreal Engine 5 using motion capture data", " Built Arduino PWM lamp controller timed to animation playback, producing an erratic flicker at the moment of contact", "tabletop enclosure around glass angle, screen brightness, and scene contrast for a clean reflection"],
     // --- Homepage card ---
     card: {
       image: "projects/your-image.jpg",  // place image in public/projects/
@@ -284,100 +284,143 @@ export const PROJECTS = [
   },
 
   {
-    slug: "university-rover-challenge",
-    title: "University Rover Challenge",
-    org: "UTEP Capstone Projects",
-    hidden: false,
-    thumb: "rover",
-    blurb: "Leading mechanical design and project coordination for Capstone project designing a Mars rover for the University Rover Challenge, leading sub-teams and fabricating a modular robotic arm.",
-    highlights: ["Designed arm manipulator with modular attachment system", "Led FDM 3D printing fabrication for structural components", "Coordinated sub-teams on timelines and deliverables"],
+  // ── Identity ──────────────────────────────────────────────
+  slug: "university-rover-challenge",
+  title: "University Rover Challenge ",
+  org: "UTEP Capstone Projects",
+  hidden: false,
 
-    card: {
-      image: "projects/rover.jpg",
-      description: "",
-      tags: ["Robotics", "Project Management", "Fusion 360", "FDM Printing"],
-    },
+  // ── Homepage card ─────────────────────────────────────────
+  blurb: "Leading mechanical design and project coordination for a Capstone Mars rover built for the University Rover Challenge, managing sub-teams and fabricating a modular robotic arm.",
 
-    heroImage: "projects/rover.jpg",
-    timeframe: "Jan 2026 – Present",
-    role: "Project Manager",
-    tools: ["Fusion 360", "FDM 3D Printing", "MS Teams", "Project Management"],
-    overview:
-      "As Project Manager for the URC team at UTEP I coordinated sub-teams, engineered a modular arm attachment system, and managed FDM fabrication of structural components.",
+  highlights: [
+    "Designed arm manipulator with modular attachment system",
+    "Led FDM 3D printing fabrication for structural components",
+    "Coordinated sub-teams on timelines and deliverables",
+  ],
 
-    cards: [
-      {
-        title: "Project Management",
-        body: "Coordinated with sub-teams across mechanical, electrical, and software disciplines to align timelines and deliverables toward competition deadlines.",
-      },
-      {
-        title: "Modular Arm Design",
-        body: "Engineered robotic arm, including a modular attachment system that allows detachment from the rover chassis, reducing swap time.",
-      },
-      {
-        title: "Fabrication",
-        body: "Led 3D printing fabrication efforts using FDM technology, iterating on designs based on fit and load requirements while balancing print parameters — including material selection, infill density, and print orientation — for strength, weight, and dimensional accuracy.",
-      },
-    ],
-
-    sections: [
-      {
-        heading: "Role & Responsibilities",
-        body: "As Project Manager, I coordinate sub-team leads, track deliverables, and ensure design decisions align with Capstone Requirments. I also contribute directly to mechanical design and fabrication.",
-      },
-      {
-        heading: "Arm Attachment System",
-        body: "The modular arm attachment system was designed for rapid field reconfiguration without tools. The design prioritizes structural integrity under load while keeping the interface simple enough for quick swaps during competition.",
-      },
-    ],
-
-    // gallery: [],
-    // reportUrl: "reports/rover-report.pdf",
-    // repoUrl: "https://github.com/...",
+  card: {
+    image: "projects/URC_team.jpg",
+    tags: ["Robotics", "Project Management", "Fusion 360", "FDM Printing"],
   },
 
-  // ProjectTemplate
-  { 
-    slug: "your-project-slug",           // URL: /projects/your-project-slug
-    title: "Your Project Title",
-    org: "Class name, org, or Personal Project",
-    hidden: false,                        // true = hides from homepage
-    thumb: "icon",                        // not USED icon label (robot, sun, buckle, etc.)
-    noDetail: true,   // ← hides button and disables link
-    blurb: "One sentence shown on hover or in lists.",
-    highlights: ["Key point 1", "Key point 2", "Key point 3"],
+  // ── Detail page ───────────────────────────────────────────
+  heroImage: "projects/URC_team.jpg",
+  timeframe: "Jan 2026 – Present",
+  role: "Project Manager",
 
-    // --- Homepage card ---
+  tools: ["Fusion 360", "FDM 3D Printing", "MS Teanpms", "Project Management"],
+
+  overview:
+    "For UTEP's Capstone URC entry, I manage cross-disciplinary sub-teams and contribute directly to mechanical design and fabrication. The centerpiece of my technical work is a modular robotic arm with a tool-free attachment interface, supported by FDM-printed structural components iterated for strength, weight, and dimensional accuracy.",
+
+  cards: [
+    {
+      title: "Goal & Context",
+      body: "Design a competition-ready Mars rover meeting URC requirements, coordinating mechanical, electrical, and software teams under Capstone constraints and deadlines.",
+    },
+    {
+      title: "Modular Arm System",
+      body: "Engineered a robotic arm with a quick-detach interface that allows tool-free chassis separation, prioritizing structural integrity under load and fast field reconfiguration.",
+    },
+    {
+      title: "Fabrication Approach",
+      body: "Led FDM 3D printing of structural components, iterating on material selection, infill density, and print orientation to meet load, weight, and dimensional requirements.",
+    },
+  ],
+
+  sections: [
+    {
+      heading: "Project Management",
+      body: "As Project Manager, I coordinate sub-team leads across mechanical, electrical, and software disciplines, tracking deliverables and aligning design decisions with Capstone requirements and competition deadlines. I run regular syncs via MS Teams to surface blockers early and keep parallel workstreams on schedule.",
+    },
+    {
+      heading: "Design & Fabrication",
+      body: "Beyond coordination, I contribute directly to mechanical design in Fusion 360 and own the FDM fabrication pipeline. The modular arm attachment system was a core design challenge — the interface needed to withstand operational loads while remaining simple enough for quick swaps during competition. Fabrication decisions, including material choice, infill, and orientation, were driven by a balance of strength, weight, and print reliability.",
+    },
+  ],
+
+  // gallery: [],
+  // reportUrl: "reports/rover-report.pdf",
+  // repoUrl: "https://github.com/...",
+},
+  // ─────────────────────────────────────────────────────────────
+  // PROJECT TEMPLATE  —  copy this block, fill in, delete comments
+  // ─────────────────────────────────────────────────────────────
+  {
+    // ── Identity ──────────────────────────────────────────────
+    slug: "your-project-slug",    // becomes the URL: /projects/your-project-slug
+    title: "Your Project Title",  // shown on card and detail page header
+    org: "Class, Lab, or Personal Project", // shown as subtitle on detail page
+    hidden: false,                // true = remove from homepage entirely
+
+    // ── Flags ─────────────────────────────────────────────────
+    notable: false,               // true = brass "Notable" badge on card image
+    noDetail: false,              // true = card is not clickable, no detail page needed
+
+    // ── Homepage card ─────────────────────────────────────────
+    blurb: "One punchy sentence. What the project is and why it matters.",
+    // blurb: 1 sentence · 20–35 words. Shown under the title on the homepage card.
+    // Lead with what you built, end with the key result or purpose.
+
+    highlights: [
+      "Specific result or technique — keep each under ~8 words",
+      "Another concrete outcome or method",
+      "A third point (3–4 highlights is ideal)",
+    ],
+    // highlights: 3–4 items · 5–10 words each. Bullet list on the card below the blurb.
+    // Be specific — numbers, methods, and outcomes beat vague descriptors.
+
     card: {
-      image: "projects/your-image.jpg",  // place image in public/projects/
-      description: "2–3 sentence description shown on the card.",
-      tags: ["Tool 1", "Tool 2", "Tool 3"],
+      image: "projects/your-image.jpg", // place file in /public/projects/
+      tags: ["Tool 1", "Tool 2", "Tool 3", "Tool 4"],
+      // tags: 3–5 items · 1–3 words each. Chips at the bottom of the card (first 4 shown).
     },
 
-    // --- Detail page ---
-    heroImage: "projects/your-image.jpg",
-    timeframe: "Fall 2025",
-    role: "Your Role",
-    tools: ["Tool 1", "Tool 2", "Tool 3"],
-    overview: "Longer paragraph describing the project for the detail page.",
+    // ── Detail page ───────────────────────────────────────────
+    heroImage: "projects/your-image.jpg", // large image at top of detail page
+    timeframe: "Fall 2025",               // e.g. "Jan 2026 – Present"
+    role: "Your Role",                    // e.g. "Lead Designer", "Project Manager" · 2–4 words
 
+    tools: [
+      "Tool 1", "Tool 2", "Tool 3",
+      // full list — all shown on detail page. 1–3 words each.
+    ],
+
+    overview:
+      "2–3 sentences for the detail page opener. More expansive than the blurb — " +
+      "describe what was built, the context, and the key outcome.",
+    // overview: 2–3 sentences · 50–80 words. Expands on the blurb for someone who clicked through.
+    // Cover: what it is, why it was built, and what the main result was.
+
+    // cards = 3-column highlight boxes at the top of the detail page body.
+    // Use for the 3 most important aspects: goal, method, outcome.
     cards: [
-      { title: "Card Title 1", body: "Short paragraph." },
-      { title: "Card Title 2", body: "Short paragraph." },
-      { title: "Card Title 3", body: "Short paragraph." },
+      { title: "Goal / Problem",    body: "What were you trying to solve or build?" },
+      { title: "Approach / Method", body: "How did you approach it? Key decisions made." },
+      { title: "Result / Outcome",  body: "What was the result? Quantify if possible." },
     ],
+    // cards: exactly 3 · title = 2–4 words · body = 1–2 sentences, 20–40 words each.
 
+    // sections = long-form write-up below the cards.
+    // Each gets a heading and a paragraph. 2–3 sections is typical.
     sections: [
-      { heading: "Section Heading", body: "Longer body text for this section." },
-      { heading: "Section Heading", body: "Longer body text for this section." },
+      { heading: "Section Heading", body: "Detailed paragraph about this aspect of the project." },
+      { heading: "Section Heading", body: "Detailed paragraph about this aspect of the project." },
     ],
+    // sections: 2–3 entries · heading = 2–4 words · body = 2–4 sentences, 50–100 words each.
+    // Good headings: "Design Process", "Control Strategy", "Results & Lessons", "My Role".
 
+    // gallery = images shown in the detail page gallery grid.
     gallery: [
-      { src: "projects/your-image.jpg", alt: "Description of image" },
+      { src: "projects/your-image.jpg",   alt: "Describe what is shown in the image" },
+      { src: "projects/your-image-2.jpg", alt: "Describe what is shown" },
     ],
+    // gallery: 2–4 images. alt text = 5–10 words describing the image content.
 
-    // reportUrl: "reports/your-report.pdf",  // uncomment if you have a PDF
-    // repoUrl: "https://github.com/...",     // uncomment if you have a repo link
+    // ── Optional links ────────────────────────────────────────
+    // reportUrl: "reports/your-report.pdf", // uncomment if you have a PDF report
+    // repoUrl: "https://github.com/...",    // uncomment if you have a public repo
   },
 
   // Add New Projects above here
